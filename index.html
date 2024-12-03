@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+
+        <div id="circle">
+
+        </div>
+    </div>
+    <div class="row">
+        <button class="box" id="red">
+            Red
+        </button>
+        <button class="box" id="green">
+            Green
+        </button>
+        <button class="box" id="yellow">
+        Yellow
+        </button>
+        <button class="box" id="reset">
+            Reset
+        </button>
+        
+    </div>
+    <div class="inputb">
+<input type="text" class="input1" placeholder="Enter text color">
+<button  id="input" class="ent">Enter</button>
+    </div>
+    <script>
+        const red = document.getElementById("red")
+        const green = document.getElementById("green")
+        const yellow = document.getElementById("yellow")
+        const reset = document.getElementById("reset")
+        const input = document.getElementById("input")
+        const circle = document.getElementById("circle")
+        const inputField = document.querySelector(".input1")
+
+        function changeCircleColor(color){
+            circle.style.backgroundColor = color
+        }
+        red.addEventListener("click", ()=>{changeCircleColor("red")})
+        green.addEventListener("click", ()=>{changeCircleColor("green")})
+        yellow.addEventListener("click", ()=>{changeCircleColor("yellow")})
+        reset.addEventListener("click", ()=>{changeCircleColor("")})
+
+        input.addEventListener("click", ()=>{
+            const userInputColor = inputField.value.trim().toLowerCase()
+            if(userInputColor){
+                changeCircleColor(userInputColor)
+            }
+        })
+    </script>
+</body>
+</html>
